@@ -1,0 +1,30 @@
+<h1>Login & Registration Portal</h1>
+<%=  "Create New Account - " %>
+<strong><%= link_to "Registration Now", new_user_path %></strong><br><br>
+
+<%=  "Login Your Account - " %>
+<strong><%= link_to "Login Now", new_session_path %></strong><br>
+
+
+
+
+
+
+
+
+
+<h3>Articles List Show</h3>
+
+Our blog has <%= Article.public_count %> articles and counting!
+
+<ul>
+  <% @articles.each do |article| %>
+    <% unless article.archived? %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= link_to "New Article", new_article_path %>

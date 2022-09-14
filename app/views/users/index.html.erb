@@ -1,0 +1,24 @@
+
+
+
+<h1>User Information </h1>
+
+<ul>
+  <% @users.each do |user| %>
+      <li>
+      user - id - <strong><%= user.id %></strong>
+      </li>
+      <li>
+       name - <%= user.name %>
+      </li>
+      <li>
+      username -  <%= user.username %>
+      </li>
+      <li>
+      email -  <%= user.email %>
+      </li>
+      <li>
+      password -  <%= user.password %>
+      </li></br> 
+  <% end %>
+</ul>
