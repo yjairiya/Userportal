@@ -11,6 +11,12 @@
   </head>
 
   <body>
-    <%= yield %>
+  <%= "Active User : " %>
+  <% if current_user.present? %>
+  <strong><%= current_user&.name; %></strong>
+    <%else%>
+    <strong ><%= link_to "Plesre Login Now", new_session_path  %></strong><br>
+    <%end%>
+  <%= yield %>
   </body>
 </html>

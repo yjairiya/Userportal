@@ -2,19 +2,17 @@ Rails.application.routes.draw do
   
   root "articles#index"
 
-  # get 'login', to: 'sessions#new'
-  # post '/login', to: 'sessions#create'
-  # get '/logout', to: 'sessions#destroy'
 
-  # get '/logout' , to: "sessions#destroy"
+  # get '/signup' => 'user#new'
+  # post '/users' => 'user#create'
+  
+  # get '/' => 'user#index'
 
-
-  # get '/list', to: "users#index"
-  # get '/register', to: "users#new"
-  # get '/register' , to: "users#create"
-  # get '/delete' , to: "users#destroy"
-
-
+  # get '/login' => 'sessions#new'
+  # post '/login' => 'sessions#create'
+  # get '/logout' => 'sessions#destroy'
+  
+  get '/logout' => 'sessions#destroy'
 
   resources :users
   resources :sessions

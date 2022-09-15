@@ -2,21 +2,15 @@
 <%=  "Create New Account - " %>
 <strong><%= link_to "Registration Now", new_user_path %></strong><br><br>
 
-<%=  "Login Your Account - " %>
-<strong><%= link_to "Login Now", new_session_path %></strong><br>
+<%#  "Login Your Account - " #%>
+<strong><%# link_to "Login Now", new_session_path #%></strong>
 
-
-
-
-
-
-
-
+<br>
+<br>
+<br>
 
 <h3>Articles List Show</h3>
-
 Our blog has <%= Article.public_count %> articles and counting!
-
 <ul>
   <% @articles.each do |article| %>
     <% unless article.archived? %>
@@ -27,4 +21,17 @@ Our blog has <%= Article.public_count %> articles and counting!
   <% end %>
 </ul>
 
-<%= link_to "New Article", new_article_path %>
+<%= link_to "Create New Article", new_article_path %>
+
+
+<br>
+<br>
+<br>
+
+
+<% if current_user %>
+  <strong><%= link_to "LogOut", 'logout'  %></strong><br>
+
+<% else %>
+  <strong><%= link_to "Session Timeout - login now", new_session_path %></strong><br>
+<% end %>

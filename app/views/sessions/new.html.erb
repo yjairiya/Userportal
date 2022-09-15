@@ -1,26 +1,24 @@
 <h1>Login User</h1>
 
 <%= form_with url: sessions_path do |fm| %>
-  
-  <strong><%= fm.label :username, "Enter Username" %></strong><br>
+  <div>
+  <strong><%= fm.label :username, "Enter username" %></strong><br>
     <%= fm.text_field :username %>  <br>
-    
-    <% @user.errors.full_messages_for(:username).each do |message| %>
-      <div><%= message %></div>
-    <% end %><br>
   </div>
 
 
   <div>
     <strong><%= fm.label :password , "Enetr Password" %></strong><br>
     <%= fm.password_field :password %><br>
-    <% @user.errors.full_messages_for(:password).each do |message| %>
-      <div><%= message %></div>
-    <% end %><br>
-  </div>
+  </div><br>
+  
  
   <div>
-    <%= fm.submit "Login" %>
+    <%= fm.submit "Login" %> <strong>
   </div>
-
+  
+  <%= link_to "Registration Now", new_user_path  %></strong><br><br>
+  
+  
+  
 <% end %>
