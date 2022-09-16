@@ -1,14 +1,4 @@
-<h1>Login & Registration Portal</h1>
-<%=  "Create New Account - " %>
-<strong><%= link_to "Registration Now", new_user_path %></strong><br><br>
-
-<%#  "Login Your Account - " #%>
-<strong><%# link_to "Login Now", new_session_path #%></strong>
-
-<br>
-<br>
-<br>
-
+<h1>----------------------------Welcome----------------------------</h1>
 <h3>Articles List Show</h3>
 Our blog has <%= Article.public_count %> articles and counting!
 <ul>
@@ -21,9 +11,10 @@ Our blog has <%= Article.public_count %> articles and counting!
   <% end %>
 </ul>
 
+<% if current_user.present?; %>
 <%= link_to "Create New Article", new_article_path %>
 
-
+<%end%>
 <br>
 <br>
 <br>

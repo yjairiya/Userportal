@@ -23,9 +23,9 @@ class ArticlesController < ApplicationController
 
   def edit
     @article = Article.find(params[:id])
-      unless current_user == @article.user
-        redirect_back fallback_location: root_path, notice: 'User is not owner'
-      end
+      # unless current_user == @article.user
+      #   redirect_back fallback_location: root_path, notice: 'User is not owner'
+      # end
   end
 
   def update

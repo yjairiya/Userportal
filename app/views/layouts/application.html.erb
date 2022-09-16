@@ -11,11 +11,20 @@
   </head>
 
   <body>
-  <%= "Active User : " %>
+  <%= "Active Status : " %>
   <% if current_user.present? %>
+    
   <strong><%= current_user&.name; %></strong>
+
     <%else%>
-    <strong ><%= link_to "Plesre Login Now", new_session_path  %></strong><br>
+    <h1>Login & Registration Portal</h1>
+    <%=  "Login Your Account - " %>
+
+    <strong ><%= link_to "Plesre Login-  Click here", new_session_path  %></strong><br><br>
+
+    <%=  "Create New Account - " %>
+    <strong><%= link_to "Registration Now", new_user_path %></strong><br><br>
+
     <%end%>
   <%= yield %>
   </body>

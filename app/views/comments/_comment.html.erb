@@ -10,9 +10,13 @@
   </p>
 
   <p>
-    <%= link_to "Destroy Comment", [comment.article, comment], data: {
-                  turbo_method: :delete,
-                  turbo_confirm: "Are you sure?"
-                } %>
+    <% if current_user.present?; %>
+      <li><%= link_to "Edit", edit_article_comment_path(@article) %></li>  
+
+      <%= link_to "Destroy Comment", [comment.article, comment], data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+    <% end %>     
   </p>
 <% end %>
